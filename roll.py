@@ -11,7 +11,7 @@ class Roll:
         self.name = name
         self.pins= pins
         self.stepCount= stepsPerTen
-        for pin in pins:
+        for pin in self.pins:
             GPIO.setup(pin,GPIO.OUT)
             GPIO.output(pin,0)
 
