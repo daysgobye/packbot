@@ -30,6 +30,6 @@ class Roll:
         for i in range(steps):
             for halfstep in range(8):
                 for pin in range(4):
-                    GPIO.output(pins[pin], seq[halfstep][pin])
+                    GPIO.output(self.pins[pin], seq[halfstep][pin])
                 time.sleep(0.001)
  
