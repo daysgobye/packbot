@@ -28,7 +28,7 @@ diode=Roll(axisx,"Diode",100)
 try:
   while True:
     stepsx = raw_input("How many X steps forward? ")
-    diode.feed()
+    diode.feed(int(stepsx))
 #     stepsy = raw_input("How many Y steps forward? ")
     # stepsz = raw_input("How many Z steps forward? ")
     # if int(stepsx) < 0:
