@@ -26,7 +26,7 @@ class Roll:
                 [0,0,1,1],
                 [0,0,0,1],
                 [1,0,0,1] ]
-        stpes= stepCount*count
+        stpes= self.stepCount*count
         for i in range(-int(steps)):
             for halfstep in range(8):
                 for pin in range(4):
