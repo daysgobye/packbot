@@ -23,6 +23,3 @@ diodeButton6.pack()
 root = Tk()
 Tk.mainloop()
 
-except KeyboardInterrupt:
-  print "  Quit"
-  GPIO.cleanup()
