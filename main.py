@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from roll import Roll
-Tkinter  import *
+from Tkinter  import *
 
 axisx = [4,17,27,22]
 axisy = [10,9,11,7]
