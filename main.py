@@ -4,6 +4,8 @@
 from roll import Roll
 from Tkinter  import *
 
+root = Tk()
+
 axisx = [4,17,27,22]
 axisy = [10,9,11,7]
 axisz = [15,18,23,24]
@@ -20,6 +22,5 @@ diodeButton5.pack()
 diodeButton6.pack()
     
 
-root = Tk()
 Tk.mainloop()
 
