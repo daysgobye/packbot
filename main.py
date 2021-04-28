@@ -22,5 +22,5 @@ diodeButton5.pack()
 diodeButton6.pack()
     
 
-Tk.mainloop()
+Tk.mainloop(root)
 
