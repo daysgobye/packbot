@@ -1,83 +1,43 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 from roll import Roll
-
-# import RPi.GPIO as GPIO
-# import time
-
-# GPIO.setmode(GPIO.BCM)
+import tkinter as tk
 
 axisx = [4,17,27,22]
 axisy = [10,9,11,7]
 axisz = [15,18,23,24]
 
-# for pin in axisx + axisy + axisz:
-   # GPIO.setup(pin,GPIO.OUT)
-   # GPIO.output(pin,0)
-
-# seq = [ [1,0,0,0],
-        # [1,1,0,0],
-        # [0,1,0,0],
-        # [0,1,1,0],
-        # [0,0,1,0],
-        # [0,0,1,1],
-        # [0,0,0,1],
-        # [1,0,0,1] ]
 diode=Roll(axisx,"Diode",100)
 
-try:
-  while True:
-    stepsx = raw_input("How many X steps forward? ")
-    diode.feed(int(stepsx))
-#     stepsy = raw_input("How many Y steps forward? ")
-    # stepsz = raw_input("How many Z steps forward? ")
-    # if int(stepsx) < 0:
-      # seq.reverse()
-      # for i in range(-int(stepsx)):
-        # for halfstep in range(8):
-          # for pin in range(4):
-            # GPIO.output(axisx[pin], seq[halfstep][pin])
-          # time.sleep(0.001)
-      # seq.reverse()
-    # else:
-      # for i in range(int(stepsx)):
-        # for halfstep in range(8):
-          # for pin in range(4):
-            # GPIO.output(axisx[pin], seq[halfstep][pin])
-          # time.sleep(0.001)
+class Application(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.master = master
+        self.pack()
+        self.create_widgets()
 
-    # if int(stepsy) < 0:
-      # seq.reverse()
-      # for i in range(-int(stepsy)):
-        # for halfstep in range(8):
-          # for pin in range(4):
-            # GPIO.output(axisy[pin], seq[halfstep][pin])
-          # time.sleep(0.001)
-      # seq.reverse()
-    # else:
-      # for i in range(int(stepsy)):
-        # for halfstep in range(8):
-          # for pin in range(4):
-            # GPIO.output(axisy[pin], seq[halfstep][pin])
-          # time.sleep(0.001)
-
-    # if int(stepsz) < 0:
-      # seq.reverse()
-      # for i in range(-int(stepsz)):
-        # for halfstep in range(8):
-          # for pin in range(4):
-            # GPIO.output(axisz[pin], seq[halfstep][pin])
-          # time.sleep(0.001)
-      # seq.reverse()
-    # else:
-      # for i in range(int(stepsz)):
-        # for halfstep in range(8):
-          # for pin in range(4):
-            # GPIO.output(axisz[pin], seq[halfstep][pin])
-          # time.sleep(0.001)
+    def create_widgets(self):
+        self.diodeButton1= tk.Button(self,text="diode x1" command=diode.feed)
+        self.diodeButton2= tk.Button(self,text="diode x2" command= lambda: diode.feed(2))
+        self.diodeButton5= tk.Button(self,text="diode x5" command= lambda: diode.feed(5))
+        self.diodeButton6= tk.Button(self,text="diode x6" command= lambda: diode.feed(6))
+        self.diodeButton1.pack()
+        self.diodeButton2.pack()
+        self.diodeButton5.pack()
+        self.diodeButton6.pack()
 
 
-# End program cleanly with keyboard
+        self.quit = tk.Button(self, text="QUIT", fg="red",
+                              command=self.master.destroy)
+        self.quit.pack(side="bottom")
+
+    
+
+root = tk.Tk()
+app = Application(master=root)
+app.mainloop()
+
 except KeyboardInterrupt:
   print "  Quit"
   GPIO.cleanup()
