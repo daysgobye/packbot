@@ -13,10 +13,10 @@ diode=Roll(axisx,"Diode",100)
 rolls=[diode]
 
 for i,roll in enumerate(rolls):
-    button1= Button(root,text=f"{roll.name} x1" ,command=diode.feed)
-    button4= Button(root,text=f"{roll.name} x4" ,command=lambda: diode.feed(4))
-    button5= Button(root,text=f"{roll.name} x5" ,command=lambda: diode.feed(5))
-    button6= Button(root,text=f"{roll.name} x6" ,command=lambda: diode.feed(6))
+    button1= Button(root,text=roll.name+" x1" ,command=diode.feed)
+    button4= Button(root,text=roll.name+" x4" ,command=lambda: diode.feed(4))
+    button5= Button(root,text=roll.name+" x5" ,command=lambda: diode.feed(5))
+    button6= Button(root,text=roll.name+" x6" ,command=lambda: diode.feed(6))
     button1.grid(column=i)
     button4.grid(column=i)
     button5.grid(column=i)
