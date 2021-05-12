@@ -9,17 +9,18 @@ root = Tk()
 axisx = [4,17,27,22]
 axisy = [10,9,11,7]
 axisz = [15,18,23,24]
-
 diode=Roll(axisx,"Diode",100)
+rolls=[diode]
 
-diodeButton1= Button(root,text="diode x1" ,command=diode.feed)
-diodeButton2= Button(root,text="diode x2", command= lambda: diode.feed(2))
-diodeButton5= Button(root,text="diode x5", command= lambda: diode.feed(5))
-diodeButton6= Button(root,text="diode x6", command= lambda: diode.feed(6))
-diodeButton1.pack()
-diodeButton2.pack()
-diodeButton5.pack()
-diodeButton6.pack()
+for i,roll in enumerate(rolls):
+    button1= Button(root,text=f"{roll.name} x1" ,command=diode.feed)
+    button4= Button(root,text=f"{roll.name} x4" ,command=lambda: diode.feed(4))
+    button5= Button(root,text=f"{roll.name} x5" ,command=lambda: diode.feed(5))
+    button6= Button(root,text=f"{roll.name} x6" ,command=lambda: diode.feed(6))
+    button1.grid(column=i)
+    button4.grid(column=i)
+    button5.grid(column=i)
+    button6.grid(column=i)
     
 
 Tk.mainloop(root)
