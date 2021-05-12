@@ -19,10 +19,10 @@ for i,roll in enumerate(rolls):
     button4= Button(root,text=roll.name+" x4" ,command=lambda: roll.feed(4))
     button5= Button(root,text=roll.name+" x5" ,command=lambda: roll.feed(5))
     button6= Button(root,text=roll.name+" x6" ,command=lambda: roll.feed(6))
-    button1.grid(column=i)
-    button4.grid(column=i)
-    button5.grid(column=i)
-    button6.grid(column=i)
+    button1.grid(row=1,column=i)
+    button4.grid(row=2,column=i)
+    button5.grid(row=3,column=i)
+    button6.grid(row=4,column=i)
     
 
 Tk.mainloop(root)
