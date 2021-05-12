@@ -12,7 +12,7 @@ set3 = [15,18,23,24]
 diode=Roll(set1,"Diode",100)
 mx=Roll(set2,"Mx",400)
 choc=Roll(set3,"Choc",400)
-rolls=[set1,set2,set3]
+rolls=[diode,mx,choc]
 
 for i,roll in enumerate(rolls):
     button1= Button(root,text=roll.name+" x1" ,command=roll.feed)
