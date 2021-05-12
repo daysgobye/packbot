@@ -15,7 +15,7 @@ choc=Roll(set3,"Choc",400)
 rolls=[set1,set2,set3]
 
 for i,roll in enumerate(rolls):
-    button1= Button(root,text=roll.name+" x1" ,command=diode.feed)
+    button1= Button(root,text=roll.name+" x1" ,command=roll.feed)
     button4= Button(root,text=roll.name+" x4" ,command=lambda: roll.feed(4))
     button5= Button(root,text=roll.name+" x5" ,command=lambda: roll.feed(5))
     button6= Button(root,text=roll.name+" x6" ,command=lambda: roll.feed(6))
