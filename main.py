@@ -5,14 +5,27 @@ from roll import Roll
 from Tkinter  import *
 
 root = Tk()
-
+keysBinds=[
+    ["F1","F7","F13","F19"],
+    ["F2","F8","F14","F20"],
+    ["F3","F9","F15","F21"],
+    ["F4","F10","F16","F22"],
+    ["F5","F11","F17","F23"],
+    ["F6","F12","F18","F24"],
+]
 set1= [4,17,27,22]
 set2 = [10,9,11,7]
 set3 = [15,18,23,24]
+set4= [12,16,20,21]
+set5= [6,13,19,26]
+set6= [5,3,2,14]
+led1=Roll(set4,"SX6812",100)
+led2=Roll(set5,"SX6812",100)
+led3=Roll(set6,"SX6812",100)
 diode=Roll(set1,"Diode",100)
 mx=Roll(set2,"Mx",400)
 choc=Roll(set3,"Choc",400)
-rolls=[diode,mx,choc]
+rolls=[diode,mx,choc,led1,led2,led3,]
 
 for i,roll in enumerate(rolls):
     button1= Button(root,text=roll.name+" x1" ,command=roll.feed)
@@ -23,7 +36,8 @@ for i,roll in enumerate(rolls):
     button4.grid(row=2,column=i)
     button5.grid(row=3,column=i)
     button6.grid(row=4,column=i)
-    
+
+root.bind("<K>"mx.feed)    
 
 Tk.mainloop(root)
 
