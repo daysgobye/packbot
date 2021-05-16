@@ -19,13 +19,23 @@ set3 = [15,18,23,24]
 set4= [12,16,20,21]
 set5= [6,13,19,26]
 set6= [5,3,2,14]
-led1=Roll(set4,"SX6812",100)
-led2=Roll(set5,"SX6812",100)
-led3=Roll(set6,"SX6812",100)
-diode=Roll(set1,"Diode",100)
-mx=Roll(set2,"Mx",400)
-choc=Roll(set3,"Choc",400)
-rolls=[diode,mx,choc,led1,led2,led3,]
+
+choc=Roll(set1,"Choc",400)
+led2=Roll(set2,"SX-MINI",100)
+mx=Roll(set3,"Mx",400)
+led1=Roll(set4,"SX6812-E",100)
+diode=Roll(set5,"Diode",100)
+led3=Roll(set6,"SX-50-50",100)
+
+
+rolls=[
+    led3,
+    led2,
+    led1,
+    choc,
+    mx,
+   diode,
+]
 
 for i,roll in enumerate(rolls):
     button1= Button(root,text=roll.name+" x1" ,command=roll.feed)
