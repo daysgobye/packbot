@@ -30,8 +30,8 @@ led3=Roll(set6,"SX-50-50",100)
 
 rolls=[
     led3,
-    led2,
     led1,
+    led2,
     choc,
     mx,
    diode,
