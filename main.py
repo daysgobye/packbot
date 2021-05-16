@@ -36,8 +36,10 @@ for i,roll in enumerate(rolls):
     button4.grid(row=2,column=i)
     button5.grid(row=3,column=i)
     button6.grid(row=4,column=i)
+for roll in rolls:
+    print(roll.name)
+    roll.feed(5)
 
-root.bind("<K>"mx.feed)    
 
 Tk.mainloop(root)
 
