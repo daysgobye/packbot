@@ -30,7 +30,7 @@ diode=Roll(set4,"Diode",100)
 choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
 def key_press(e):
-    print(e.char)
+    print("pressed:"+e.char)
 
 rolls=[
     led1,
@@ -50,9 +50,8 @@ for i,roll in enumerate(rolls):
     button4.grid(row=2,column=i)
     button5.grid(row=3,column=i)
     button6.grid(row=4,column=i)
-for roll in rolls:
-    print(roll.name)
-    roll.feed(10)
+
+
 root.bind("<Key>",key_press)
 
 Tk.mainloop(root)
