@@ -20,21 +20,21 @@ set4= [12,16,20,21]
 set5= [6,13,19,26]
 set6= [5,3,2,14]
 
-choc=Roll(set1,"Choc",400)
+led1=Roll(set1,"MINI-E",100)
 led2=Roll(set2,"SX-MINI",100)
 mx=Roll(set3,"Mx",400)
-led1=Roll(set4,"SX6812-E",100)
-diode=Roll(set5,"Diode",100)
+diode=Roll(set4,"Diode",100)
+choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
 
 
 rolls=[
-    choc,
-    led2,
-    mx,
     led1,
-   diode,
+    led2,
     led3,
+    mx,
+    choc,
+    diode,
 ]
 
 for i,roll in enumerate(rolls):
@@ -48,7 +48,7 @@ for i,roll in enumerate(rolls):
     button6.grid(row=4,column=i)
 for roll in rolls:
     print(roll.name)
-    roll.feed(1)
+    roll.feed(10)
 
 
 Tk.mainloop(root)
