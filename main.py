@@ -29,12 +29,12 @@ led3=Roll(set6,"SX-50-50",100)
 
 
 rolls=[
-    led3,
-    led1,
-    led2,
     choc,
+    led2,
     mx,
+    led1,
    diode,
+    led3,
 ]
 
 for i,roll in enumerate(rolls):
@@ -48,7 +48,7 @@ for i,roll in enumerate(rolls):
     button6.grid(row=4,column=i)
 for roll in rolls:
     print(roll.name)
-    roll.feed(5)
+    roll.feed(1)
 
 
 Tk.mainloop(root)
