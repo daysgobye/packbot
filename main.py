@@ -13,6 +13,9 @@ keysBinds=[
     ["F5","F11","F17","F23"],
     ["F6","F12","F18","F24"],
 ]
+
+
+
 set1= [4,17,27,22]
 set2 = [10,9,11,7]
 set3 = [15,18,23,24]
@@ -26,7 +29,8 @@ mx=Roll(set3,"Mx",400)
 diode=Roll(set4,"Diode",100)
 choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
-
+def key_press(e):
+    print(e.char)
 
 rolls=[
     led1,
@@ -49,7 +53,7 @@ for i,roll in enumerate(rolls):
 for roll in rolls:
     print(roll.name)
     roll.feed(10)
-
+root.bind("<Key>",key_press)
 
 Tk.mainloop(root)
 
