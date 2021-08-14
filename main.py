@@ -30,25 +30,25 @@ diode=Roll(set4,"Diode",100)
 choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
 feedAmt=1
-feedStr="x1"
+feedStr=StringVar()
 def key_press(e):
     global feedAmt
     code=e.char
     if code=="q":
        feedAmt+=1
-       feedStr="x"+str(feedAmt)
+       feedStr.set("x"+str(feedAmt))
     if code=="w":
        feedAmt-=1
-       feedStr="x"+str(feedAmt)
+       feedStr.set("x"+str(feedAmt))
     if code =="e":
        feedAmt+=10
-       feedStr="x"+str(feedAmt)
+       feedStr.set("x"+str(feedAmt))
     if code =="r":
        feedAmt-=10
-       feedStr="x"+str(feedAmt)
+       feedStr.set("x"+str(feedAmt))
     if code =="t":
        feedAmt=1
-       feedStr="x"+str(feedAmt)
+       feedStr.set("x"+str(feedAmt))
     if code=="a":
        led1.feed(feedAmt)
     if code=="s":
