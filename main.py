@@ -79,7 +79,7 @@ def key_press(e):
         choc.feed(6)
     if code=="o":
         diode.feed(6)
-
+    root.update_idletasks()
 
 rolls=[
     led1,
