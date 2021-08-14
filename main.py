@@ -5,16 +5,7 @@ from roll import Roll
 from Tkinter  import *
 
 root = Tk()
-keysBinds=[
-    ["F1","F7","F13","F19"],
-    ["F2","F8","F14","F20"],
-    ["F3","F9","F15","F21"],
-    ["F4","F10","F16","F22"],
-    ["F5","F11","F17","F23"],
-    ["F6","F12","F18","F24"],
-]
-
-
+root.window.attributes('-fullscreen', True)  
 
 set1= [4,17,27,22]
 set2 = [10,9,11,7]
@@ -31,6 +22,7 @@ choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
 feedAmt=1
 feedStr=StringVar()
+feedStr.set("x1")
 def key_press(e):
     global feedAmt
     code=e.char
