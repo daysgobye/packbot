@@ -5,7 +5,7 @@ from roll import Roll
 from Tkinter  import *
 
 root = Tk()
-root.window.attributes('-fullscreen', True)  
+root.attributes('-fullscreen', True)
 
 set1= [4,17,27,22]
 set2 = [10,9,11,7]
