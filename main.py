@@ -30,19 +30,25 @@ diode=Roll(set4,"Diode",100)
 choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
 feedAmt=1
+feedStr="x1"
 def key_press(e):
     global feedAmt
     code=e.char
     if code=="q":
        feedAmt+=1
+       feedStr="x"+str(feedAmt)
     if code=="w":
        feedAmt-=1
+       feedStr="x"+str(feedAmt)
     if code =="e":
        feedAmt+=10
+       feedStr="x"+str(feedAmt)
     if code =="r":
        feedAmt-=10
+       feedStr="x"+str(feedAmt)
     if code =="t":
        feedAmt=1
+       feedStr="x"+str(feedAmt)
     if code=="a":
        led1.feed(feedAmt)
     if code=="s":
@@ -94,7 +100,7 @@ sub1=Button(root,text="-1")
 add10=Button(root,text="+10")
 sub10=Button(root,text="-10")
 reset=Button(root,text="rest")
-feedview=Label(root, text="("+str(feedAmt)+")")
+feedview=Label(root, textvariable=feedStr)
 add1.grid(row=1,column=0)
 sub1.grid(row=1,column=1)
 add10.grid(row=1,column=2)
@@ -103,7 +109,7 @@ reset.grid(row=1,column=4)
 feedview.grid(row=1,column=5)
 
 for i,roll in enumerate(rolls):
-    button1= Button(root,text=roll.name+" x"+str(feedAmt) ,command=roll.feed)
+    button1= Button(root,textvariable=feedStr ,command=roll.feed)
     button4= Button(root,text=roll.name+" x1" ,command=lambda: roll.feed(4))
     button6= Button(root,text=roll.name+" x6" ,command=lambda: roll.feed(6))
     button1.grid(row=3,column=i)
