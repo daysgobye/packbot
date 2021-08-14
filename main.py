@@ -102,7 +102,7 @@ reset.grid(row=1,column=4)
 feedview.grid(row=1,column=5)
 
 for i,roll in enumerate(rolls):
-    button1= Button(root,text=roll.name+" x"+feedAmt ,command=roll.feed)
+    button1= Button(root,text=roll.name+" x"+str(feedAmt) ,command=roll.feed)
     button4= Button(root,text=roll.name+" x1" ,command=lambda: roll.feed(4))
     button6= Button(root,text=roll.name+" x6" ,command=lambda: roll.feed(6))
     button1.grid(row=3,column=i)
