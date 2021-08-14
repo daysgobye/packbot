@@ -31,6 +31,7 @@ choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
 feedAmt=1
 def key_press(e):
+    global feedAmt
     code=e.char
     if code=="q":
        feedAmt+=1
