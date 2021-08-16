@@ -11,8 +11,6 @@ class Screen:
         self.i2c = board.I2C()
         self.oled = adafruit_ssd1306.SSD1306_I2C(128, 32, self.i2c, addr=0x3C)
         self.font = ImageFont.load_default()
-        self.image = Image.new("1", (self.oled.width, self.oled.height))
-        self.draw = ImageDraw.Draw(self.image)
         self.clear()
 
     def clear(self):
@@ -21,6 +19,8 @@ class Screen:
 
     def print_text(self,text):
         self.clear()
+        self.image = Image.new("1", (self.oled.width, self.oled.height))
+        self.draw = ImageDraw.Draw(self.image)
         (font_width, font_height) = self.font.getsize(text)
         self.draw.text(
         (self.oled.width // 2 - font_width // 2, self.oled.height // 2 - font_height // 2),
