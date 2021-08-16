@@ -33,6 +33,6 @@ class Roll:
 
 
     def feed(self, count=1):
-        background_thread = Thread(target=self.do_work, args=(self,count))
+        background_thread = Thread(target=self.do_work, args=(count))
         background_thread.start()
  
