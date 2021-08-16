@@ -8,6 +8,7 @@ GPIO.setmode(GPIO.BCM)
 
 class Roll(Thread):
     def __init__(self,pins,name,stepsPerTen):
+        Thread.__init__(self)
         self.name = name
         self.pins= pins
         self.stepCount= stepsPerTen
