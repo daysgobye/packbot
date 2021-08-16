@@ -51,7 +51,7 @@ class Screen:
         self.BORDER = 5
         self.oled_reset = digitalio.DigitalInOut(board.D4)
         self.i2c = board.I2C()
-        self.oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c, addr=0x3C)
+        self.oled = adafruit_ssd1306.SSD1306_I2C(128, 32, self.i2c, addr=0x3C)
         self.font = ImageFont.load_default()
         self.image = Image.new("1", (oled.width, oled.height))
         self.draw = ImageDraw.Draw(image)
