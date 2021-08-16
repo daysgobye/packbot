@@ -23,7 +23,6 @@ class Screen:
         self.text[lineNumber]=newText 
         self.image = Image.new("1", (self.oled.width, self.oled.height))
         self.draw = ImageDraw.Draw(self.image)
-        (font_width, font_height) = self.font.getsize(text)
         self.draw.text(
         (0,0),
         self.text[0],
