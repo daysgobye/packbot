@@ -14,7 +14,7 @@ class Roll:
         for pin in self.pins:
             GPIO.setup(pin,GPIO.OUT)
             GPIO.output(pin,0)
-    def do_work(self,count):
+    def do_work(self):
         seq = [ [1,0,0,0],
                 [1,1,0,0],
                 [0,1,0,0],
@@ -23,7 +23,7 @@ class Roll:
                 [0,0,1,1],
                 [0,0,0,1],
                 [1,0,0,1] ]
-        steps= self.stepCount*count
+        steps= self.stepCount*self.next_count
         for i in range(steps):
             for halfstep in range(8):
                 for pin in range(4):
@@ -33,6 +33,7 @@ class Roll:
 
 
     def feed(self, count=1):
-        background_thread = Thread(target=self.do_work, args=(count))
+        self.next_count=count
+        background_thread = Thread(target=self.do_work)
         background_thread.start()
  
