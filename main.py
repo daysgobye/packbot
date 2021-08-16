@@ -2,6 +2,7 @@ from roll import Roll
 import board
 import busio
 import adafruit_ssd1306
+import digitalio
 from PIL import Image, ImageDraw, ImageFont
 
 oled_reset = digitalio.DigitalInOut(board.D4)
