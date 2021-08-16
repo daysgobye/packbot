@@ -6,19 +6,15 @@ GPIO.setmode(GPIO.BCM)
 
 
 
-class Roll(Thread):
+class Roll:
     def __init__(self,pins,name,stepsPerTen):
-        Thread.__init__(self)
         self.name = name
         self.pins= pins
         self.stepCount= stepsPerTen
         for pin in self.pins:
             GPIO.setup(pin,GPIO.OUT)
             GPIO.output(pin,0)
-
-
-    def run(self, count=1):
-
+    def do_work(self,count):
         seq = [ [1,0,0,0],
                 [1,1,0,0],
                 [0,1,0,0],
@@ -33,4 +29,10 @@ class Roll(Thread):
                 for pin in range(4):
                     GPIO.output(self.pins[pin], seq[halfstep][pin])
                 time.sleep(0.001)
+
+
+
+    def feed(self, count=1):
+        background_thread = Thread(target=self.do_work, args=(self,count))
+        background_thread.start()
  
