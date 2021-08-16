@@ -68,7 +68,7 @@ def key_press(key):
         choc.feed(6)
     if code=="o":
         diode.feed(6)
-    display.print_text(str(feedAmt))
+    display.print_text("feed amt: "+str(feedAmt),1)
 
 keyboard.on_press(key_press)
 

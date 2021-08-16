@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 class Screen:
     def __init__(self):
+        self.text=["","","",""]
         self.BORDER = 5
         self.oled_reset = digitalio.DigitalInOut(board.D4)
         self.i2c = board.I2C()
@@ -16,19 +17,31 @@ class Screen:
     def clear(self):
         self.oled.fill(0)
         self.oled.show()
+        self.text=["","",""]
 
-    def print_text(self,text):
-        self.clear()
+    def print_text(self,text,lineNumber):
+        self.text[lineNumber]=text 
         self.image = Image.new("1", (self.oled.width, self.oled.height))
         self.draw = ImageDraw.Draw(self.image)
         (font_width, font_height) = self.font.getsize(text)
         self.draw.text(
-        (self.oled.width // 2 - font_width // 2, self.oled.height // 2 - font_height // 2),
-        text,
+        (0,0)
+        self.text[0],
         font=self.font,
         fill=255,
         )
-
+       self.draw.text(
+        (0,15)
+        self.text[1],
+        font=self.font,
+        fill=255,
+        )
+        self.draw.text(
+        (0,30)
+        self.text[2],
+        font=self.font,
+        fill=255,
+        )
         self.oled.image(self.image)
         self.oled.show()
 
