@@ -1,13 +1,13 @@
 from roll import Roll
 from screen import Screen
-from pynput.keyboard import Key, Listener
+from pynput import keyboard
 def on_press(key):
     print('{0} pressed'.format(
-        key))
+        key.char))
 
 def on_release(key):
     print('{0} release'.format(
-        key))
+        key.char))
     if key == Key.esc:
         # Stop listener
         return False
@@ -31,7 +31,7 @@ choc=Roll(set5,"Choc",400)
 led3=Roll(set6,"SX-50-50",100)
 
 feedAmt=1
-with Listener(
+with keyboard.Listener(
         on_press=on_press,
         on_release=on_release) as listener:
     listener.join()
