@@ -20,6 +20,7 @@ class Screen:
         self.oled.show()
 
     def print_text(self,text):
+        self.clear()
         (font_width, font_height) = self.font.getsize(text)
         self.draw.text(
         (self.oled.width // 2 - font_width // 2, self.oled.height // 2 - font_height // 2),
