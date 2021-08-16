@@ -54,7 +54,7 @@ class Screen:
         self.oled = adafruit_ssd1306.SSD1306_I2C(128, 32, self.i2c, addr=0x3C)
         self.font = ImageFont.load_default()
         self.image = Image.new("1", (self.oled.width, self.oled.height))
-        self.draw = ImageDraw.Draw(image)
+        self.draw = ImageDraw.Draw(self.image)
         self.clear()
 
     def clear(self):
