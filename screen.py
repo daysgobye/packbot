@@ -69,5 +69,7 @@ class Screen:
         font=self.font,
         fill=255,
         )
+
+        self.oled.image(self.image)
         self.oled.show()
 
