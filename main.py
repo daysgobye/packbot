@@ -33,41 +33,41 @@ def key_press(key):
     if code =="t":
        feedAmt=1
     if code=="a":
-       led1.feed(feedAmt)
+       led1.start(feedAmt)
     if code=="s":
-        led2.feed(feedAmt)
+        led2.start(feedAmt)
     if code=="d":
-        led3.feed(feedAmt)
+        led3.start(feedAmt)
     if code=="f":
-        mx.feed(feedAmt)
+        mx.start(feedAmt)
     if code =="g":
-        choc.feed(feedAmt)
+        choc.start(feedAmt)
     if code=="h":
-        diode.feed(feedAmt)
+        diode.start(feedAmt)
     if code=="z":
-        led1.feed(1)
+        led1.start(1)
     if code=="x":
-        led2.feed(1)
+        led2.start(1)
     if code=="c":
-        led3.feed(1)
+        led3.start(1)
     if code=="v":
-        mx.feed(1)
+        mx.start(1)
     if code=="b":
-        choc.feed(1)
+        choc.start(1)
     if code=="n":
-        diode.feed(1)
+        diode.start(1)
     if code=="u":
-        led1.feed(6)
+        led1.start(6)
     if code=="j":
-        led2.feed(6)
+        led2.start(6)
     if code=="m":
-        led3.feed(6)
+        led3.start(6)
     if code=="i":
-        mx.feed(6)
+        mx.start(6)
     if code=="k":
-        choc.feed(6)
+        choc.start(6)
     if code=="o":
-        diode.feed(6)
+        diode.start(6)
     display.print_text(str(feedAmt))
 
 keyboard.on_press(key_press)

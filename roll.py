@@ -1,12 +1,13 @@
 
 import RPi.GPIO as GPIO
 import time
+import threading
 
 GPIO.setmode(GPIO.BCM)
 
 
 
-class Roll:
+class Roll(Thread):
     def __init__(self,pins,name,stepsPerTen):
         self.name = name
         self.pins= pins
@@ -16,7 +17,7 @@ class Roll:
             GPIO.output(pin,0)
 
 
-    def feed(self, count=1):
+    def run(self, count=1):
 
         seq = [ [1,0,0,0],
                 [1,1,0,0],
