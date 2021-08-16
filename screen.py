@@ -30,7 +30,7 @@ class Screen:
         font=self.font,
         fill=255,
         )
-       self.draw.text(
+        self.draw.text(
         (0,15),
         self.text[1],
         font=self.font,
