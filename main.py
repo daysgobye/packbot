@@ -1,18 +1,7 @@
 from roll import Roll
 from screen import Screen
-from pynput import keyboard
-def on_press(key):
-    print('{0} pressed'.format(
-        key.char))
-
-def on_release(key):
-    print('{0} release'.format(
-        key.char))
-    if key == Key.esc:
-        # Stop listener
-        return False
-
-# Collect events until released
+import keyboard
+import time
 
 display=Screen()
 set1= [4,17,27,22]
@@ -35,3 +24,12 @@ with keyboard.Listener(
         on_press=on_press,
         on_release=on_release) as listener:
     listener.join()
+
+
+def key_press(key):
+    print(key.name)
+
+keyboard.on_press(key_press)
+
+while True:
+    time.sleep(1)
