@@ -1,8 +1,7 @@
 
 import RPi.GPIO as GPIO
 import time
-import threading
-
+from threading import Thread
 GPIO.setmode(GPIO.BCM)
 
 
