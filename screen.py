@@ -19,25 +19,25 @@ class Screen:
         self.oled.show()
         self.text=["","",""]
 
-    def print_text(self,text,lineNumber):
-        self.text[lineNumber]=text 
+    def print_text(self,newText,lineNumber):
+        self.text[lineNumber]=newText 
         self.image = Image.new("1", (self.oled.width, self.oled.height))
         self.draw = ImageDraw.Draw(self.image)
         (font_width, font_height) = self.font.getsize(text)
         self.draw.text(
-        (0,0)
+        (0,0),
         self.text[0],
         font=self.font,
         fill=255,
         )
        self.draw.text(
-        (0,15)
+        (0,15),
         self.text[1],
         font=self.font,
         fill=255,
         )
         self.draw.text(
-        (0,30)
+        (0,30),
         self.text[2],
         font=self.font,
         fill=255,
